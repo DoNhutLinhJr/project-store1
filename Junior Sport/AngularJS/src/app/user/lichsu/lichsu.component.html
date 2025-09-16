@@ -1,0 +1,27 @@
+<div class="loan-history">
+  <h1>Mẫu giày đã thuê</h1>
+  <div class="history-container">
+    <table class="history-table" *ngIf="loans.length > 0; else noLoansTemplate">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên Giày</th>
+          <th>Hãng Giày</th>
+          <th>Ngày thuê</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let loan of loans">
+          <td>{{ loan.id }}</td>
+          <td>{{ loan.book.title }}</td>
+          <td>{{ loan.book.author }}</td>
+          <td>{{ loan.loanDate | date : "dd/MM/yyyy" }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ng-template #noLoansTemplate>
+      <p class="no-loans">Bạn chưa thuê mẫu giày nào.</p>
+    </ng-template>
+  </div>
+</div>

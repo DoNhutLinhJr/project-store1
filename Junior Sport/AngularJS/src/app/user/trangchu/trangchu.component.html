@@ -1,0 +1,82 @@
+<div class="home">
+  <div class="banner">
+    <div class="slideshow">
+      <img src="banner11.jpg" alt="Banner 1" width="100%" />
+    </div>
+    <div class="banner-content">
+      <h3>CHÀO MỪNG BẠN ĐẾN VỚI</h3>
+      <h1>Junior Sport</h1>
+      <p>
+        Chào mừng bạn đến với Junior Sport – nơi mang đến những đôi giày chất lượng và thời thượng nhất!
+      </p>
+
+    </div>
+  </div>
+
+  <div class="header-content">
+ 
+
+    <div class="info">
+      <div class="info-image">
+        <img src="gioithieu1.jpg" alt="Giới thiệu" />
+      </div>
+      <div class="info-text">
+        <h2>Junior Sport</h2>
+        <p>
+          Bạn muốn tìm một đôi giày đá bóng chất lượng, thoải mái và phù hợp với lối chơi của mình?
+           Hãy đến với Junior Sport, nơi hội tụ những mẫu giày đá bóng tốt nhất dành cho mọi mặt sân!
+        </p>
+        <div class="steps">
+          <div class="step">
+            <span class="icon"><i class="bi bi-check2-square"></i></span>
+            <h5>Đầy Đủ Mẫu Mã</h5>
+          </div>
+        
+          <div class="step">
+            <span class="icon"><i class="bi bi-check-lg"></i></span>
+            <h5>Cập Nhật Nhanh Chóng</h5>
+          </div>
+          
+          <div class="step">
+            <span class="icon"><i class="bi bi-link-45deg"></i></span>
+            <h5>Mua Hàng Trực Tuyến</h5>
+          </div>
+          <div class="step">
+            <span class="icon"><i class="bi bi-person-arms-up"></i></span>
+            <h5>Nhiệt Tình Hỗ Trợ</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="title">HÀNG MỚI VỀ</h2>
+    <div class="grid">
+      <div class="card" (click)="goToBookDetail(book)" *ngFor="let book of books">
+        <div class="image-container">
+        <img [src]="book.image" [alt]="book.title" />
+      </div>
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.description }}</p>
+      </div>
+    </div>
+    <button class="view-more-btn" (click)="goToCategory()">Click để xem chi tiết</button>
+  </div>
+
+  <div class="info">
+    <div class="info-text">
+      <h2>TẠI SAO LẠI LỰA CHỌN JUNIOR SPORT?</h2>
+      <p>
+        Chúng tôi không chỉ bán giày mà còn thấu hiểu nhu cầu của từng cầu thủ. 
+        Tại JUNIOR SPORT, bạn sẽ được tư vấn tận tình để chọn được đôi giày phù hợp nhất với mặt sân, vị trí thi đấu, và phong cách chơi của bạn
+      </p>
+    </div>
+
+    <div class="info-image">
+      <img src="lydochon1.jpg" alt="Lý do chọn" />
+    </div>
+  </div>
+  
+  <div class="space"></div>
+</div>

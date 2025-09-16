@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="header">
+    <h1>Thống kê</h1>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-4">
+      <div class="stat-box stat-box-1">
+        <div class="text">
+          <h4>Tổng số giày</h4>
+          <p>{{ totalBooks }} Giày</p>
+        </div>
+        <div class="icon"><i class="bi bi-journal-bookmark-fill"></i></div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="stat-box stat-box-2">
+        <div class="text">
+          <h4>Tổng số mẫu giày</h4>
+          <p>{{ totalCategories }} Loại giày</p>
+        </div>
+        <div class="icon"><i class="bi bi-menu-button-fill"></i></div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="stat-box stat-box-3">
+        <div class="text">
+          <h4>Số lượng giày đã thuê</h4>
+          <p>{{ totalLoans }} Mẫu giày đã thuê</p>
+        </div>
+        <div class="icon"><i class="bi bi-journal-check"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Biểu đồ -->
+  <div class="row mt-4">
+      <h4>Số lượng giày đã thuê</h4>
+      <canvas id="barChart"></canvas>
+  </div>
+</div>

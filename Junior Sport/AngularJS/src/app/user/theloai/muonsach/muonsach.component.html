@@ -1,0 +1,45 @@
+<div class="container-fluid" *ngIf="!isLoading; else loadingTemplate">
+  <div class="vote">
+    <div class="vote-image">
+      <img
+        [src]="'http://localhost:8000/api/v1/books/image/' + bookDetails?.image"
+        alt="Ảnh sách"
+      />
+    </div>
+    <div class="vote-text">
+      <h2>Thuê giày</h2>
+      <div class="book-info">
+        <p><strong>Tên giày:</strong> {{ bookDetails?.title }}</p>
+        <p><strong>Hãng giày:</strong> {{ bookDetails?.author }}</p>
+        <p><strong>Nhà sản xuất:</strong> {{ bookDetails?.publisher }}</p>
+        <p>
+          <strong>Ngày xuất bản:</strong>
+          {{ bookDetails?.publishDate | date : "dd/MM/yyyy" }}
+        </p>
+      </div>
+
+      <!-- Hiển thị thông tin người dùng -->
+      <div class="user-info">
+        <p><strong>Họ và tên:</strong> {{ userData?.fullName }}</p>
+        <p><strong>Email:</strong> {{ userData?.email }}</p>
+        <p><strong>Địa chỉ:</strong> {{ userData?.address }}</p>
+        <p>
+          <strong>Ngày sinh:</strong> {{ userData?.dob | date : "dd/MM/yyyy" }}
+        </p>
+      </div>
+
+      <!-- Form chỉ chứa Ngày mượn và Ngày trả -->
+      <form (ngSubmit)="onSubmit()" class="borrow-form">
+        <button type="submit">
+          Thuê giày
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTemplate>
+  <div class="loading">
+    <p>Đang tải thông tin giày...</p>
+  </div>
+</ng-template>

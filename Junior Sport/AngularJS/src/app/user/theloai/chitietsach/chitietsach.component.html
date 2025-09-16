@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div *ngIf="loading" class="loading">
+    <p>Đang tải thông tin giày...</p>
+  </div>
+
+  <div *ngIf="!loading && errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="!loading && book" class="detail-book">
+    <div class="detail-book-image">
+      <img [src]="book.image" [alt]="book.title" />
+    </div>
+    <div class="detail-book-text">
+      <h2><span>Tên giày:</span> "{{ book.title }}"</h2>
+      <p><span>Hãng giày:</span> {{ book.author }}</p>
+      <p><span>Giá thành:</span> {{ book.publisher }}</p>
+      <p>
+        <span>Ngày sản xuất:</span> {{ book.publishDate | date : "dd/MM/yyyy" }}
+      </p>
+      <p><span>Mã ISBN:</span> {{ book.isbn }}</p>
+      <p>Nguồn: <a href="https://neymarsport.com//">Nguồn NeymarSport </a></p>
+      <p>
+        <span>Tình trạng:</span>
+        <span
+          class="status"
+          [ngClass]="book.isAvailable ? 'available' : 'unavailable'"
+        >
+          {{ book.isAvailable ? "Còn hàng" : "Hết hàng" }}
+        </span>
+      </p>
+      <button class="detail-book-btn" (click)="goToBorrowBook()">
+       Thuê giày
+      </button>
+      
+    </div>
+    
+  </div>
+</div>

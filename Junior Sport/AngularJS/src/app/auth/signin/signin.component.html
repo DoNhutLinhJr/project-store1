@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="containerImg">
+      <img src="logo3.jpg" alt="">
+  </div>
+
+  <div class="containerContent">
+    <h3>Chào bạn trở lại với Junior Sport</h3>
+    <h1>ĐĂNG NHẬP</h1>
+    <form (ngSubmit)="login()" autocomplete="off">
+      <label for="email">Email</label>
+      <div class="inputRow">
+        <input type="email" placeholder="Email của bạn" [(ngModel)]="email" name="User_email" autocomplete="off" required>
+      </div>
+    
+      <label for="password">Mật khẩu</label>
+      <div class="inputRow">
+        <input type="password" id="password" placeholder="Mật khẩu của bạn" [(ngModel)]="password" name="password" required>
+      </div>
+      
+      <button type="submit">ĐĂNG NHẬP</button>
+    </form>
+    
+    <p>Bạn chưa có tài khoản? <a routerLink="/auth/signup">ĐĂNG KÝ</a></p>
+  </div>
+</div>
